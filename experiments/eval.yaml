@@ -55,7 +55,7 @@ TRAIN:
   # Evaluation settings
 EVAL:
   EPOCH: 15  # where to continue evlauation based on training epochs
-  SAMPLES: 1000  # number of tested pairs for each class
+  SAMPLES: 200  # number of tested pairs for each class
   NUM_EPOCH: 4 # evaluation period during training
   MODE: single # choices=['clean', 'single', 'all']
 
@@ -65,10 +65,10 @@ ATTACK:
   EPSILON_FEATURE: 8
   EPSILON_LOCALITY: 8
   EVAL_ALPHA: 0.25
-  EVAL_STEP: 50
+  EVAL_STEP: 10
   RESTARTS: 1
   EARLY_STOP_RATIO: 0.
   # attack attributes
   TYPE: pgd # attack optimization way, choices = ['pgd', 'none', 'momentum', 'random']
-  OBJ_TYPE: pixel+pos+struc # attack input object, choices = ['pixel', 'pos', 'struc', 'pos+struc', 'pixel+pos', 'pixel+pos+struc']
+  OBJ_TYPE: pixel # attack input object, choices = ['pixel', 'pos', 'struc', 'pos+struc', 'pixel+pos', 'pixel+pos+struc']
   LOSS_FUNC: perm # attack loss objective, choices = ['perm', 'ourloss', 'hamming', 'cw', ...]

@@ -41,8 +41,8 @@ def eval_util(model, wb, dataloader, device=None):
         eval_att = AttackGM(obj_type, 'pgd', 
                     criterion=criterion_att, 
                     eps=(cfg.ATTACK.EPSILON_FEATURE, cfg.ATTACK.EPSILON_LOCALITY), 
-                    iter_num=cfg.ATTACK.EVAL_STEP, 
-                    alpha=cfg.ATTACK.EVAL_ALPHA, 
+                    iter_num=10,
+                    alpha=0.25,
                     device=device, 
                     inv=False)
         accs = eval_model(model, dataloader['test'], criterion=criterion_att, attack=eval_att, xls_sheet=xls_sheet, xls_row=2)

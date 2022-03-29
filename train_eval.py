@@ -179,7 +179,7 @@ def train_eval_model(model,
         scheduler.step()
 
     # Eval Robustness in the final epoch 
-    eval_util(model, xls_wb)
+    eval_util(model, xls_wb, dataloader)
     wb.save(wb.__save_path)
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}h {:.0f}m {:.0f}s'

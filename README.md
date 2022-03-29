@@ -47,7 +47,13 @@ To perform various while-box attacks shown in Paper, run the fllowing script:
 python train_eval.py --cfg experiments/eval.yaml
 ```
 
-To perform various black-box attacks shown in Paper, run the fllowing script:
+Note that white-box attack evaluation can be automatically performed by setting 
+```yaml
+EVAL.MODE: all
+```
+To customize your attack, please change the value of ``EVAL.MODE`` as ``single``.
+
+Additionally, to perform various black-box attacks shown in Paper, run the fllowing script:
 
 ```bash
 python eval.py --cfg experiments/eval_blackbox.yaml --black
